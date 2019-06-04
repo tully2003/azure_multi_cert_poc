@@ -1,0 +1,29 @@
+﻿@model CertificatesViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center mt-2">
+    <h1 class="display-4">Certificates POC</h1>
+
+    <h2>String to encrypt => @Model.StringToEncrypt</h2>
+
+    <hr />
+
+    @foreach(var cert in Model.Certificates)
+    {
+    <div class="text-left">
+        <dl>
+            <dt>Name</dt>
+            <dd>@cert.Name</dd>
+
+            <dt>Encrypted String</dt>
+            <dd>@cert.EncryptedString</dd>
+
+            <dt>Created Date</dt>
+            <dd>@cert.CreatedDate.ToString("dd/MM/yyyy hh:mm:ss")</dd>
+        </dl>
+        <hr />
+    </div>
+    }
+</div>
